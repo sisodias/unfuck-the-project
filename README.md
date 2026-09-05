@@ -1,68 +1,74 @@
-# UNFUCK — whole-project ownership prompt for a frontier agent
+# UNFUCK — whole-project ownership for a frontier agent, with the source layer
 
-A reusable prompt you hand to the smartest model you have access to, together with a short brief about one project, that turns it from a task-runner into the **accountable owner** of that project. It recovers what you were actually trying to build, reads the real evidence (your prompts, transcripts, client feedback, code, tests, runtime), works out where the reasoning or implementation went wrong, and then makes the project materially better — and keeps going.
+Give the smartest model you have the **whole project**, not a task, and give it the **sources** a good owner would use: a ranked list of the questions worth frontier compute, a bank of 8,538 UI components with source, a bank of 23,778 categorised GitHub repos, and the search skills to find what's missing. That's this repo plus its two sibling banks.
 
-It is not a framework, a runtime, or a task system. It is two files:
+```
+unfuck-the-project/            ← you are here: prompt, brief, God Questions, skills
+siso-component-bank/           ← 8,538 21st.dev components, 6,212 with TSX source, one index   (191 MB previews + 86 MB source)
+siso-repo-bank/                ← 23,778 rated repos, best-per-capability, adoption vs fame, 56k star farm
+```
 
-| File | What it is |
+- https://github.com/sisodias/siso-component-bank
+- https://github.com/sisodias/siso-repo-bank
+
+Everything is MIT (the prompt, the indexes, the skills). Component and repo code belongs to its upstream authors; every row carries the upstream URL.
+
+## Quick start (hand this to an agent)
+
+```bash
+git clone https://github.com/sisodias/unfuck-the-project
+git clone https://github.com/sisodias/siso-component-bank
+git clone https://github.com/sisodias/siso-repo-bank
+cp unfuck-the-project/templates/BRIEF.md my-project/BRIEF.md   # fill it in, five minutes, be honest
+```
+
+Then, in the agent:
+
+```text
+Read unfuck-the-project/UNFUCK.md in full, then my-project/BRIEF.md.
+The component bank is at ../siso-component-bank and the repo bank at ../siso-repo-bank; their READMEs say how to query them.
+The skills in unfuck-the-project/skills/ are yours to load.
+You are the owner of this project under that prompt. Begin.
+```
+
+Walk away. It pings you only for a genuinely new blocking decision, an authority conflict, or an urgent risk.
+
+## What's in here
+
+| Path | What it is |
 |---|---|
-| [`UNFUCK.md`](UNFUCK.md) | The prompt. Give it to the agent verbatim. |
-| [`templates/BRIEF.md`](templates/BRIEF.md) | A fill-in dispatch brief for one project: root, sources, owners, constraints. |
+| [`UNFUCK.md`](UNFUCK.md) | The prompt (v3). Whole-project ownership, scepticism of inherited structure, evidence recovery from real sources, verified entry point, distil learning. |
+| [`templates/BRIEF.md`](templates/BRIEF.md) · [`examples/BRIEF-example.md`](examples/BRIEF-example.md) | The one-page dispatch brief per project: root, sources, where it hurts, owners, constraints, success. |
+| [`god-questions/GOD-QUESTIONS.md`](god-questions/GOD-QUESTIONS.md) | The ranked list of questions worth frontier compute (GQ-001 to GQ-019), with a **falsifier** per question: what answer would make us stop, and the cheapest worker-tier probe that produces it. Rule: no frontier compute without a written falsifier. |
+| [`god-questions/library-contracts/`](god-questions/library-contracts/) | Eight research contracts as JSON: question, answer shape, success criteria, evidence gaps, watch triggers. Machine-readable, for an agent that is going to *work* a question. |
+| [`god-questions/ORIGINS-2026-07.md`](god-questions/ORIGINS-2026-07.md) | Where the questions came from and the harness contract for answering one. |
+| [`god-questions/BINDING-EXAMPLE-2026-08-29.md`](god-questions/BINDING-EXAMPLE-2026-08-29.md) | A worked example: one project auditing itself against the questions, re-deriving every count from source, and finding it *is* the engine that answers GQ-004. Read it for the method. |
+| [`skills/`](skills/) | Agent skills, Claude-Code `SKILL.md` format, usable as plain instructions anywhere. See below. |
 
-Pair them and dispatch. That's the whole mechanism.
+### Skills
 
-## Quick start
+| Skill | Use it when |
+|---|---|
+| `code-search-campaign` | You want to find what already exists in open source before building. Three lanes (Sourcegraph, GitHub keyword, GitHub topics), loop until dry, judge last. Bundles `sg-search.sh`. |
+| `gitsearch` · `unified-code-search` · `xsearch` · `multisearch` | Narrower search mechanics: GitHub code/repo search, cross-source, X/Twitter, multi-engine. |
+| `ui-bank` | Before building any UI: query the component bank, read the preview and the source, adapt. Also the intake flow when a human pastes component URLs with reactions. |
+| `classify-by-reading` | Before any archive / delete / dedupe / supersede call: read the file and its consumers. Names, flags and timestamps are claims, not verdicts. |
+| `prove-before-claim` | Before any verifiable system claim: run the probe that could make you wrong. A table of claim → falsifying command. |
+| `subagents` | Dispatching bounded workers: one outcome, exact paths, forbidden edits, compact `RETURN` block. Templates for parallel spawn and research. |
+| `skills-catalog` | Discover and load skills by trigger. |
+| `analyzing-video` | A human sends a screen recording or Loom: ffmpeg frames, analyse in parallel. |
 
-1. Copy `UNFUCK.md` and `templates/BRIEF.md` into the project (or anywhere the agent can read).
-2. Fill in the brief — see [`examples/BRIEF-example.md`](examples/BRIEF-example.md). Five minutes. Be honest about what's broken.
-3. Dispatch:
-
-   ```text
-   Read UNFUCK.md in full, then BRIEF.md. You are the owner of this project under that prompt. Begin.
-   ```
-
-4. Walk away. Come back to a resumable state, a working entry point, and a project that is better than you left it. It will only ping you for a genuinely new blocking decision, an authority conflict, or an urgent risk.
-
-Works with any agent that can read files and run commands (Claude Code, Codex, Cursor agents, OpenHands, a Herdr/tmux pane — anything). The better the model, the better the result; the prompt is written for frontier-class reasoning and gets weaker on small models.
-
-## What the prompt actually does
-
-The prompt is organised around one idea: **the agent owns the outcome, not the task.**
-
-- **Recover the real intent and evidence.** Read the original human prompts, voice transcripts, client feedback, decisions, code, tests and runtime — not another agent's summary. Distinguish what the human said from what a previous assistant proposed. Resolve corrections at the scope they were given; don't let the newest document silently win.
-- **Be sceptical of inherited structure.** Tidy names, repeated conventions, phase plans and assistant-created approval processes are unproven until read. Neither age, nor which model wrote it, nor repetition proves something good or disposable. Read the thing and its consumers before changing or removing it.
-- **Reason, decide, execute.** What are the actual outcomes? What's already valuable? Where did we build the wrong thing, duplicate, lose context, make iteration hard? Pick the shortest high-quality path and carry it through. Resolve decisions yourself when the evidence is sufficient; don't send the human a questionnaire the project files already answer.
-- **Use compute intelligently.** Keep consequential reasoning and integration with the owner. Use scoped sub-agents for genuinely independent reading, implementation or verification — with exact ownership, a concrete outcome and a stop condition. No agent-per-noun, no recursive fan-out.
-- **Verify against reality.** A green build, a screenshot, a catalogue count or a synthetic probe is not proof of integration. Test the changed behaviour and its existing consumers.
-- **Leave a real front door.** Every project must end with a verified agent entry point (README / AGENTS / current-state) that a fresh reader can navigate from. Another unverified index is not a finished front door.
-- **Distil learning, not instruction noise.** Promote only lessons that change a real decision. Keep private transcripts and client details out of reusable modules.
-- **Stay the owner.** A finished milestone is a checkpoint, not the end. Keep working until the outcome is achieved or no useful authorised work remains.
-
-Hard limits are explicit: no exposing secrets, no fabricated evidence, no unapproved spend, no binding a client to new terms, no overwriting another owner's work, no irreversible production/cutover changes without approval. The agent stops *that* action, explains once, and continues everything else.
+The skills reference each other by name and assume nothing about your machine. Where one names a specific model tier, read it as "your cheapest capable worker" and "your strongest reviewer".
 
 ## Why this exists
 
-We run many projects in parallel with agents owning each one. Two failure modes kept recurring:
+We run many projects in parallel with agents owning each one. Two failure modes kept recurring: the agent completes the audit or the first passing test and stops, leaving the project no more coherent; and successive agents inherit tidy-looking but unverified structure and build on it because it looks deliberate. UNFUCK answers both: one accountable owner, sceptical of everything it inherits, proving improvement against real intent and real runtime evidence, with the sources a good owner would actually use.
 
-1. **Task-runner drift.** An agent completes the audit, the checklist or the first passing test and stops — leaving the project no more coherent than before.
-2. **Slop accumulation.** Successive agents inherit tidy-looking but unverified structure (phase plans, approval rituals, duplicate docs, dead worktrees) and build on it because it *looks* deliberate.
-
-UNFUCK answers both: give the whole project to one accountable owner, make it sceptical of everything it inherits, and make it prove improvement against the real intent and real runtime evidence. It has been through three revisions from actually dispatching it across client work, an internal ops app, a streaming product, a knowledge corpus and a machine-organisation job.
-
-## Using it at scale
-
-If you're dispatching many owners at once (one per project):
-
-- One brief per project. Never a shared brief.
-- Name the real root, source locations and any *other* active owners so they don't collide. Folder boundary ≠ product boundary.
-- Let a lightweight routing agent hold cross-project priorities; it is **not** an approval desk. The prompt tells owners not to send it routine status.
-- A template revision does not silently expand an already-dispatched project's scope. Re-dispatch explicitly if you want the new version applied.
+The God Questions are the other half. Not every question deserves frontier compute; the ones that do are ranked, and each has a written falsifier so the compute can stop. The banks exist because "what's the best X" and "is there a component for Y" should be one command, not a scrape.
 
 ## Versioning
 
-`UNFUCK.md` carries its own version line at the top. v3 (5 September 2026) makes source authorship and decision-scoped supersession explicit — the agent must know *who* said a thing and *what scope* a correction applies to, because a transcript's `user` role can carry pasted proposals and generated summaries.
-
-Fork it, change it, keep the version line honest.
+`UNFUCK.md` carries its own version line. v3 (5 September 2026) makes source authorship and decision-scoped supersession explicit: the agent must know *who* said a thing and *what scope* a correction applies to, because a transcript's `user` role can carry pasted proposals and generated summaries. The God Questions file is dated per revision. Fork it, change it, keep the dates honest.
 
 ## Licence
 

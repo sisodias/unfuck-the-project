@@ -1,0 +1,460 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+  "slug": "frontier-question-god-questions-infrastructure",
+  "name": "GQ-009 · The God Questions Observatory",
+  "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-31",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; research inputs, operational receipts, and answer artifacts retain their own rights and publication review.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "The Great Library is the public-safe registry and reading surface whose God Questions infrastructure this Work studies and dogfoods.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/research-question-model.html",
+          "observed_at": "2026-08-02",
+          "summary": "The accepted identity model makes questions Works and accepted answers immutable Releases in the Great Library."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry discovers source buckets, repositories, books, people, and watch signals relevant to each question without writing accepted truth.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/question-driven-research.html",
+          "observed_at": "2026-08-02",
+          "summary": "The question-driven architecture assigns evidence-universe discovery and monitoring to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge preserves the large rights-aware corpus and retrieval plane that question dossiers reference but do not duplicate.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/siso-knowledge-model.html",
+          "observed_at": "2026-08-02",
+          "summary": "The published boundary assigns durable corpus custody, provenance, retrieval, indexes, and graphs to SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines turn explicit sources into traceable claims, contradictions, and graded evidence packages that may change a question answer.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/question-driven-research.html",
+          "observed_at": "2026-08-02",
+          "summary": "The question-driven architecture keeps evidence transformation independent from question identity and execution authority."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-009",
+    "question": "How should the Great Library make God Questions visible, composable, continuously updated, and connected to evidence, decisions, approved action, and capability learning without becoming the corpus warehouse or execution runtime?",
+    "state": "researching",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "the existing Frontier Question Works, metadata seeds, answer-lineage model, and question-driven research architecture",
+      "the generated Research index and individual Question Work reading surfaces",
+      "publication-safe Foundry, Knowledge, Evidence Engine, Event, ADR, Release, and Snapshot interfaces",
+      "privacy-safe receipts from real research, routing, repository, book, and implementation work"
+    ],
+    "decision_to_change": "Which registry fields, Library projections, evidence interfaces, and action-return contracts should become the standard infrastructure for every SISO God Question?",
+    "success_criteria": [
+      "A cold human or agent can find every standing question, its state, decision target, evidence gaps, falsifiers, watch triggers, and current answer lineage from one generated Library surface.",
+      "Existing repositories, books, videos, research, and operational receipts can attach to a question through owned evidence systems without being copied into the public registry.",
+      "A question can justify a bounded action candidate and later receive a verified learning return without the Library authorizing or executing the action.",
+      "At least one repeated mechanism discovered through a question can be evaluated and promoted into its independently owned capability Work."
+    ],
+    "falsifiers": [
+      "The design requires a second question registry or central operational database to remain coherent.",
+      "The visible dossier accumulates metadata but cannot improve a real research, routing, or investment decision.",
+      "Useful evidence cannot be connected without leaking private corpora, machine paths, client data, or operational topology into the public Library.",
+      "Maintaining the question contract costs more attention than the repeated research and decision errors it prevents."
+    ],
+    "evidence_gaps": [
+      "No evaluated end-to-end user flow yet proves that the portfolio view helps a cold operator choose the next valuable investigation.",
+      "Claim, contradiction, assumption, experiment, mandate, observation, and learning-return objects do not yet share one proven cross-system receipt contract.",
+      "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate.",
+      "MEASURED 2026-08-04: extraction does not scale to the corpus. Claim extraction over the 932-book philosophy shelf alone needs ~400M tokens against a 150M budget (267%); the full 41.5M-passage corpus needs ~33,200M (22,133%). The budget covers ~187,500 passages. So evidence selection must be question-driven; 'extract everything and index it' is arithmetically impossible, not merely wasteful.",
+      "The retrieval unit is unresolved. Passages are the evidence substrate but not the search surface -- a paragraph is not a thing you can agree or disagree with. Claims (position + grounding quote + confidence) are ~2 orders of magnitude fewer and match the Evidence Engines ingest contract, but the extraction layer that produces them does not exist.",
+      "No standing agent operates the loop. Every piece of infrastructure built to date is supply; nothing continuously reads a question, finds bearing evidence, and updates an answer. This is the gap between a warehouse and an organ."
+    ],
+    "watch_triggers": [
+      "A new God Question cannot express a decision target, falsifier, evidence gap, or refresh condition in the current contract.",
+      "Foundry or Knowledge ships a question-addressable export that can replace a manual evidence link.",
+      "The first approved experiment returns an Observation Receipt and exposes a missing Library lineage field.",
+      "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields.",
+      "A standing agent proposes a change to the Library or Foundry and it survives independent review -- the first evidence that self-improvement is real rather than asserted."
+    ],
+    "answer_shape": "A versioned God Questions operating architecture with a generated Observatory, machine-readable question-program contract, evidence and action-return interfaces, ownership boundaries, acceptance fixtures, and explicit promotion and kill gates.",
+    "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
+    "publication_boundary": "public_metadata_only",
+    "program": {
+      "freshness": {
+        "assessed_at": "2026-08-03",
+        "review_due_at": "2026-08-17"
+      },
+      "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
+      "assumptions": [
+        {
+          "id": "QA-GQ009-CANONICAL-EXTENSION",
+          "level": "QA",
+          "scope": "Library identity and projection",
+          "statement": "The existing Work, Release, Snapshot, and Event spine can support question-program visibility without a second registry.",
+          "status": "active",
+          "confidence": "medium",
+          "falsifier": "A heterogeneous question cannot express and validate its current program or answer lineage without a separate source of identity truth.",
+          "depends_on": [],
+          "evidence_connection_ids": [
+            "EC-GQ009-CONSTITUTION",
+            "EC-GQ009-CHECKPOINT",
+            "EC-GQ009-OPERATOR-PASS",
+            "EC-GQ009-ESTATE-RECONCILIATION"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ009-METADATA-VALUE",
+          "level": "QA",
+          "scope": "question reconstruction economics",
+          "statement": "A compact assumption, evidence, and action-learning projection improves cold-reader reconstruction enough to justify its authoring overhead.",
+          "status": "challenged",
+          "confidence": "low",
+          "falsifier": "Cold readers or agents cannot reconstruct a decision path more accurately, or the repeated authoring cost exceeds the errors and rediscovery avoided.",
+          "depends_on": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "evidence_connection_ids": [
+            "EC-GQ009-CHECKPOINT",
+            "EC-GQ009-ESTATE-RECONCILIATION"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ009-OWNER-BOUNDARY",
+          "level": "QA",
+          "scope": "action and learning authority",
+          "statement": "Typed public references can connect question demand to returned learning without granting approval, execution, or evidence-adjudication authority to the Library.",
+          "status": "challenged",
+          "confidence": "low",
+          "falsifier": "A real action-to-learning chain cannot remain reconstructable unless the Library stores private payloads or represents a proposal as approval or observation as accepted truth.",
+          "depends_on": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "evidence_connection_ids": [
+            "EC-GQ009-JOINT-BRIDGE",
+            "EC-GQ009-PRIVACY-FAIL",
+            "EC-GQ009-ESTATE-RECONCILIATION"
+          ],
+          "review_date": "2026-08-02"
+        }
+      ],
+      "evidence_connections": [
+        {
+          "id": "EC-GQ009-CONSTITUTION",
+          "source_type": "documentation",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "docs/god-questions-infrastructure.html",
+          "relevance_hypothesis": "The canonical constitution exposes the minimum identity, ownership, interface, dependency, and falsification rules the substrate must implement.",
+          "rights_state": "public",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "summary": "The pushed constitution preserves question identity, organ boundaries, action authority, learning proposals, and explicit later or rejected scope.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-CHECKPOINT",
+          "source_type": "repository",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
+          "rights_state": "public",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "repo-check:god-questions-infrastructure:270c37c",
+          "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "summary": "The exact branch checkpoint passed the complete Library gate and published the authored and generated constitution plus Research navigation.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "challenges_assumption_ids": [
+            "QA-GQ009-METADATA-VALUE"
+          ]
+        },
+        {
+          "id": "EC-GQ009-JOINT-BRIDGE",
+          "source_type": "registry_record",
+          "owning_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "reference": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json#evidence",
+          "relevance_hypothesis": "The start Event's public bridge evidence tests whether action and learning ownership can be referenced without copying its owner-held design payload.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
+          "revision_or_digest": "event-evidence:2026-08-02",
+          "summary": "The public Event records the typed, approval-gated bridge while the Library remains limited to safe identity and lineage.",
+          "supports_assumption_ids": [
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-OPERATOR-PASS",
+          "source_type": "operational_receipt",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "relevance_hypothesis": "Independent cold-reader and contract replay test whether the canonical projection improves reconstruction and remains backward compatible.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "verification-receipt:sha256:7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "revision_or_digest": "68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "summary": "Independent cold-reader and contract lanes reconstructed the operator path and verified canonical human and agent projections at the exact pushed checkpoint.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-PRIVACY-FAIL",
+          "source_type": "operational_receipt",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "relevance_hypothesis": "The independent privacy adversary tests whether typed public metadata actually prevents owner-held text, topology, credential, timing, or truth-state leakage.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "verification-receipt:sha256:7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "revision_or_digest": "68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "summary": "The privacy lane found that free-text metadata and temporal or truth-state edges needed stronger validation; the mixed receipt is verified observation, not accepted truth.",
+          "supports_assumption_ids": [],
+          "challenges_assumption_ids": [
+            "QA-GQ009-OWNER-BOUNDARY"
+          ]
+        },
+        {
+          "id": "EC-GQ009-ESTATE-RECONCILIATION",
+          "source_type": "source_review",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "docs/estate-reconciliation.html",
+          "relevance_hypothesis": "A reviewed public candidate cohort tests whether existing Library identities and explicit no-change or deferral outcomes can absorb estate learning without a second registry or automatic promotion.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "owner-review-receipt:sha256:9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+          "revision_or_digest": "9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+          "summary": "Four public repository observations resolved to two existing Work links, one historical no-change result, and one owner and license-review deferral; no source or registry identity was automatically promoted.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "challenges_assumption_ids": []
+        }
+      ],
+      "action_learning_links": [
+        {
+          "id": "AL-GQ009-DEMAND",
+          "object_type": "epistemic_demand",
+          "authority_state": "demand_only",
+          "owner_role": "question_steward",
+          "reference": "registry/works/frontier-question-gq-009.json#research_contract",
+          "recorded_at": "2026-08-02T00:33:07+07:00",
+          "predecessor_ids": [],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "proposed",
+          "summary": "GQ-009 defines the decision, falsifiers, evidence gaps, and expected answer without authorizing implementation."
+        },
+        {
+          "id": "AL-GQ009-CANDIDATE",
+          "object_type": "action_candidate",
+          "authority_state": "proposal_only",
+          "owner_role": "operating_architecture",
+          "reference": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+          "recorded_at": "2026-08-02T00:33:08+07:00",
+          "predecessor_ids": [
+            "AL-GQ009-DEMAND"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "proposed",
+          "summary": "The active initiative is represented as a bounded action candidate; approval and execution receipts remain separately owned."
+        },
+        {
+          "id": "AL-GQ009-MANDATE",
+          "object_type": "execution_mandate",
+          "authority_state": "approved_scope",
+          "owner_role": "decision_owner",
+          "reference": "authorization-receipt:sha256:dc93428fcc4624a54d3e341ce87a7c3a31a10288510a63726d2644789bfccdd3",
+          "recorded_at": "2026-08-02T01:31:58+07:00",
+          "content_sha256": "dc93428fcc4624a54d3e341ce87a7c3a31a10288510a63726d2644789bfccdd3",
+          "predecessor_ids": [
+            "AL-GQ009-CANDIDATE"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "approved",
+          "expires_at": "2026-08-02T07:31:58+07:00",
+          "summary": "The owner approved a six-hour bounded infrastructure, verification, and closeout envelope; the private authorization payload remains owner-held and only its digest is public."
+        },
+        {
+          "id": "AL-GQ009-OBSERVATION",
+          "object_type": "observation_receipt",
+          "authority_state": "observation_only",
+          "owner_role": "independent_verifier",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "recorded_at": "2026-08-02T01:58:30+07:00",
+          "content_sha256": "7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "predecessor_ids": [
+            "AL-GQ009-MANDATE"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "verified",
+          "truth_state": "not_adjudicated",
+          "summary": "The mixed independent observation passed cold-reader and contract reconstruction but failed privacy hardening, producing a bounded repair requirement rather than an accepted answer."
+        },
+        {
+          "id": "AL-GQ009-LEARNING",
+          "object_type": "learning_return",
+          "authority_state": "learning_proposal",
+          "owner_role": "question_steward",
+          "reference": "learning-return-receipt:sha256:dd48a2a2b541175ea0a239131545a521c95caf6d268201fdf5b8a5fe7389de65",
+          "recorded_at": "2026-08-02T01:59:30+07:00",
+          "content_sha256": "dd48a2a2b541175ea0a239131545a521c95caf6d268201fdf5b8a5fe7389de65",
+          "predecessor_ids": [
+            "AL-GQ009-OBSERVATION"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "no_change",
+          "truth_state": "not_adjudicated",
+          "summary": "The Learning Return proposes the privacy and temporal repairs now under verification while keeping GQ-009 researching, publishing no Answer Release, and promoting no capability."
+        },
+        {
+          "id": "AL-GQ009-ESTATE-LEARNING",
+          "object_type": "learning_return",
+          "authority_state": "learning_proposal",
+          "owner_role": "question_steward",
+          "reference": "learning-return-receipt:sha256:9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+          "recorded_at": "2026-08-02T05:07:20+07:00",
+          "content_sha256": "9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+          "predecessor_ids": [
+            "AL-GQ009-OBSERVATION"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "no_change",
+          "truth_state": "not_adjudicated",
+          "summary": "Owner-reviewed estate reconciliation supports the existing identity and authority boundaries, records no new Work or inventory, keeps the deferred candidate outside promotion, and proposes no Answer Release."
+        }
+      ]
+    },
+    "watch_trigger_status": {
+      "evaluated_at": "2026-08-04",
+      "1": "DOES NOT FIRE — tested. All 7 registry questions express decision target, falsifiers, evidence gaps and refresh policy in the current contract. The contract carries every question without strain.",
+      "2": "DOES NOT FIRE — tested 2026-08-04. ~/foundry-data/research/ holds 4 question-addressable exports (one directory per question, each with answer.md and evidence.json). But the evidence records are model-extracted summaries — {relevant, patterns} — with no URL, quote or citation. Nothing dereferences, so they cannot replace a manual evidence link. The structure is right; the addressability is missing.",
+      "3": "CANNOT FIRE — requires an approved experiment; none exists.",
+      "4": "DOES NOT FIRE — tested. 1 of 7 claims has action=done; the trigger needs three. Blocked by the missing approval step, NOT by incomplete research: six claims sit at action=proposed with grounding complete.",
+      "5": "CANNOT FIRE BY CONSTRUCTION — the standing agent is the proposer and the trigger requires INDEPENDENT review. This is the only one genuinely blocked on a second party.",
+      "note": "Recorded because \"blocked on a person\" had been used to describe GQ-009 as a whole. That is true of trigger 5 alone. Trigger 1 not firing is a positive result about the contract that was never written down."
+    }
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:god-questions-existing-architecture:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The existing six Frontier Question Works, V28 selection, question-driven research documentation, generated Research surface, and live operating-architecture debate were reviewed before adding this dogfood question."
+    },
+    {
+      "kind": "documentation",
+      "reference": "user-intent:god-questions-infrastructure:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The requested priority is the reusable God Questions Library infrastructure, using existing research as dogfood instead of producing redundant speculative answers."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/payload-v1",
+      "observed_at": "2026-08-03",
+      "summary": "A question-addressable corpus export now exists. 79,071 works are byte-addressable from any machine with no local data: one HTTP Range request against a release asset returned 26,460 bytes and yielded a complete 101,354-character book in 0.79s. This is the first source that can replace a manual evidence link with a resolvable locator."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-people-graph/releases/tag/graph-v1",
+      "observed_at": "2026-08-03",
+      "summary": "Cross-domain people graph published: 280,708 people, 564,486 content edges spanning books/GitHub/YouTube, 2,050,629 topic edges across five deliberately-separate vocabularies. Verified by downloading from clean and querying."
+    },
+    {
+      "kind": "source_review",
+      "reference": "local:passages.sqlite:2026-08-04",
+      "observed_at": "2026-08-03",
+      "summary": "41,501,325 passages indexed across 77,540 books as byte ranges into immutable source. Establishes the evidence granularity a question actually needs -- a paragraph, not a book."
+    }
+  ]
+}
