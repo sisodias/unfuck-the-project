@@ -8,7 +8,7 @@
 | Where it sits | `~/SISO_Workspace/Great_Library_of_SISO/works/unfuck-the-project` · district Great_Library_of_SISO · GitHub sisodias/unfuck-the-project |
 | Owner | not yet assigned; the top Agent Zero (herdr A0, SISO_Agents/agent-zero/siso-firstmate) holds it |
 | Run it | no entry point declared; see `README.md` |
-| Write here | .agents/ is this repo's one agent folder (ADR 0015); create what you need there |
+| Write here | `.agents/HANDOFF.md` (state); `.agents/memory/MEMORY.md` (durable facts, one file each plus an index line) |
 | Worktrees | _data/worktrees/unfuck-the-project/&lt;lane&gt; (never beside or inside the repo) |
 | Find anything | `estate where <words>`; the city map is `estate map` |
 <!-- estate:door end -->
